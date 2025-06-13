@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FactoryPulse-Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f101066a7fac293cfe4a50fc5425b4a9d6bc3c99")]
 [assembly: System.Reflection.AssemblyProductAttribute("FactoryPulse-Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FactoryPulse-Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -121,3 +121,56 @@
 2025-06-13 21:48:08.484 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5085/sensors/2 - null null
 2025-06-13 21:48:08.494 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5085/sensors/2 - 404 0 null 10.3808ms
 2025-06-13 21:48:08.502 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5085/sensors/2, Response status code: 404
+2025-06-13 22:59:02.924 +05:30 [ERR] An error occurred using the connection to database 'factorypulse_db' on server 'tcp://postgres:5432'.
+2025-06-13 22:59:39.526 +05:30 [INF] MQTT client connected successfully
+2025-06-13 22:59:39.576 +05:30 [INF] Connected to MQTT broker and subscribed to factory topics
+2025-06-13 22:59:39.609 +05:30 [INF] Now listening on: http://localhost:5085
+2025-06-13 22:59:39.611 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 22:59:39.612 +05:30 [INF] Hosting environment: Development
+2025-06-13 22:59:39.613 +05:30 [INF] Content root path: D:\Files\.NET\FactoryPulse\FactoryPulse-Core
+2025-06-13 22:59:50.708 +05:30 [INF] Application is shutting down...
+2025-06-13 23:00:00.798 +05:30 [ERR] An error occurred using the connection to database 'factorypulse_db' on server 'tcp://postgres:5432'.
+2025-06-13 23:00:44.744 +05:30 [ERR] Failed executing DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-13 23:00:44.891 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-13 23:00:44.901 +05:30 [INF] Applying migration '20250613172845_InitialCreate'.
+2025-06-13 23:00:54.973 +05:30 [INF] MQTT client connected successfully
+2025-06-13 23:00:55.033 +05:30 [INF] Connected to MQTT broker and subscribed to factory topics
+2025-06-13 23:00:55.081 +05:30 [INF] Now listening on: http://localhost:5085
+2025-06-13 23:00:55.082 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-13 23:00:55.083 +05:30 [INF] Hosting environment: Development
+2025-06-13 23:00:55.084 +05:30 [INF] Content root path: D:\Files\.NET\FactoryPulse\FactoryPulse-Core
+2025-06-13 23:02:29.740 +05:30 [INF] Application is shutting down...
+2025-06-13 23:02:39.185 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-13 23:04:19.504 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-13 23:04:19.650 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-06-13 23:04:19.657 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-13 23:04:19.659 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-06-13 23:04:19.662 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-13 23:04:19.668 +05:30 [INF] Applying migration '20250613173409_AddNewSensorDataColumns'.
+2025-06-13 23:04:19.682 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "SensorData" ADD "Humidity" real NOT NULL DEFAULT 0;
+2025-06-13 23:04:19.685 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "SensorData" ADD "Pressure" real NOT NULL DEFAULT 0;
+2025-06-13 23:04:19.689 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "SensorData" ADD "RPM" real NOT NULL DEFAULT 0;
+2025-06-13 23:04:19.691 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250613173409_AddNewSensorDataColumns', '9.0.6');

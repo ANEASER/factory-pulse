@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.SignalR;
 using MQTTnet;
 using MQTTnet.Client;
+using FactoryPulse_Core.Data;
 using FactoryPulse_Core.Hubs;
 using FactoryPulse_Core.Services;
 using FactoryPulse_Core.Endpoints;
 using Serilog;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,10 @@ builder.Host.UseSerilog();
 
 builder.Services.AddSignalR();
 builder.Services.AddSingleton<MqttService>();
+
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 
 builder.Services.AddCors(options =>
