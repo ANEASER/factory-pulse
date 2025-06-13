@@ -1,0 +1,100 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Files\\.NET\\FactoryPulse\\FactoryPulse-Core\\FactoryPulse-Core.csproj": {}
+  },
+  "projects": {
+    "D:\\Files\\.NET\\FactoryPulse\\FactoryPulse-Core\\FactoryPulse-Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Files\\.NET\\FactoryPulse\\FactoryPulse-Core\\FactoryPulse-Core.csproj",
+        "projectName": "FactoryPulse-Core",
+        "projectPath": "D:\\Files\\.NET\\FactoryPulse\\FactoryPulse-Core\\FactoryPulse-Core.csproj",
+        "packagesPath": "C:\\Users\\2021i\\.nuget\\packages\\",
+        "outputPath": "D:\\Files\\.NET\\FactoryPulse\\FactoryPulse-Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\2021i\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[4.3.1.873, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "prometheus-net": {
+              "target": "Package",
+              "version": "[8.2.1, )"
+            },
+            "prometheus-net.AspNetCore": {
+              "target": "Package",
+              "version": "[8.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
