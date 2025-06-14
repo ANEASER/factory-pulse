@@ -105,6 +105,11 @@ public static class SensorEndpoints
                     </html>
                     """, "text/html")).WithName(ListnToSensorsName);
 
+        group.MapGet("/test-error", () =>
+        {
+            throw new InvalidOperationException("This is a test exception!");
+        });
+
         return group;
     }
 }

@@ -36,7 +36,6 @@ public class MqttService
 
             await _mqttClient.ConnectAsync(options);
             
-            // Subscribe to all factory topics
             await _mqttClient.SubscribeAsync("factory/+/+");
             
             _logger.LogInformation("Connected to MQTT broker and subscribed to factory topics");
@@ -65,7 +64,7 @@ public class MqttService
         try
         {
             var topic = e.ApplicationMessage.Topic;
-            var payload = System.Text.Encoding.UTF8.GetString(e.ApplicationMessage.Payload ?? Array.Empty<byte>());
+            var payload = System.Text.Encoding.UTF8.GetString(Array.Empty<byte>());
 
             var topicParts = topic.Split('/');
             if (topicParts.Length == 3 && topicParts[0] == "factory")

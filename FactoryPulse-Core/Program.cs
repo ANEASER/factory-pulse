@@ -1,13 +1,10 @@
-using Microsoft.AspNetCore.SignalR;
-using MQTTnet;
-using MQTTnet.Client;
 using FactoryPulse_Core.Data;
 using FactoryPulse_Core.Hubs;
 using FactoryPulse_Core.Services;
 using FactoryPulse_Core.Endpoints;
 using Serilog;
 using Microsoft.EntityFrameworkCore;
-
+using FactoryPulse_Core.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,10 +21,7 @@ builder.Services.AddSingleton<MqttService>();
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
-
-builder.Services.AddCors(options =>
-{
+builder.Services.AddCors(options => {
     options.AddDefaultPolicy(builder =>
     {
         builder.AllowAnyOrigin()
@@ -38,16 +32,14 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseMiddleware<LoggingMiddleware>();
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
-app.UseCors(
-    options => options
-        .WithOrigins("http://localhost:3000") 
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowCredentials()
-);
+app.UseCors(options => options
+    .WithOrigins("http://localhost:3000")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials());
+
 app.MapHub<SensorHub>("/sensorHub");
 
 var mqttService = app.Services.GetRequiredService<MqttService>();
